@@ -1,42 +1,84 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f7fb;
+  color: #18202b;
+}
+
+.app-header {
+  padding: 1.25rem 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  border-bottom: 1px solid #d8deea;
+  background-color: #fff;
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  flex: 1;
+}
+
+.sidebar {
+  padding: 1rem 0;
+  border-right: 1px solid #d8deea;
+  background-color: #fff;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: #24303f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  background-color: #eef2f8;
+}
+
+.main-content {
   padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.main-content h1 {
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.season-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+#season-select {
+  min-width: 180px;
+  padding: 0.5rem;
+  border: 1px solid #c6cfdf;
+  border-radius: 6px;
+  font: inherit;
+  background-color: #fff;
+}
+
+@media (max-width: 720px) {
+  .app-layout {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid #d8deea;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
