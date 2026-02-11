@@ -1,34 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const navItems = ['Home', 'Players', 'Teams', 'Draft', 'League']
 
+function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app-shell">
+      <header className="app-header">1970 Fantasy Football</header>
+      <div className="app-layout">
+        <aside className="sidebar" aria-label="Main navigation">
+          <nav>
+            <ul className="nav-list">
+              {navItems.map((item) => (
+                <li key={item}>
+                  <a href="#" className="nav-link">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </aside>
+        <main className="main-content">
+          <h1>Choose a season</h1>
+          <label htmlFor="season-select" className="season-label">
+            Season
+          </label>
+          <select id="season-select" name="season" defaultValue="1970">
+            <option value="1970">1970</option>
+          </select>
+        </main>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
